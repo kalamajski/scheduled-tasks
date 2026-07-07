@@ -1,17 +1,17 @@
 import requests
 from twilio.rest import Client
+import os
 
 # data for openweather
 LATITUDE = 55.7
 LONGITUDE = 13.2
 COUNTS = 4
-OW_API_KEY = ${{ secrets.OW_API_KEY }
+OW_API_KEY = os.environ.get("OW_API_KEY")
 
 #data for Twilio
-ACCOUNT_SID = ${{ secrets.ACCOUNT_SID }
-AUTH_TOKEN = ${{ secrets.AUTH_TOKEN }
-print(OW_API_KEY)
-print(AUTH_TOKEN)
+ACCOUNT_SID = os.environ.get("ACCOUNT_SID")
+AUTH_TOKEN = os.environ.get("AUTH_TOKEN")
+
 weather_params = {
     "lat": LATITUDE,
     "lon": LONGITUDE,
